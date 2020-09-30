@@ -30,7 +30,7 @@ class RegController extends Controller
 
 
 
-    public function create_registration_code(Request $request)
+    public function created(Request $request)
     {
         $rules = [
             'student_code' => 'required|digits:10|string',

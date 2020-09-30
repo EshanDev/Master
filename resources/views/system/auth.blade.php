@@ -1,7 +1,6 @@
 @extends('layouts.auth')
 @section('stylesheet')
     <link rel="stylesheet" href="{{mix('css/auth.css')}}">
-    <link rel="stylesheet" href="{{ asset('js/jquery.formatter.min.js') }}">
 @endsection
 
 

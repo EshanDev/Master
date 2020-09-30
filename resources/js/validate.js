@@ -9,9 +9,9 @@ $('form').bind("keypress", function (e) {
 
 
 // get base url
-var getUrl = window.location;
-var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-console.log("this is a "+baseUrl + "/verify_email");
+let getUrl = window.location,
+    baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+//console.log("this is a "+baseUrl + "/verify_email");
 // Validation
 //For Conditions System.
 
@@ -142,6 +142,11 @@ $(registration_code).validate({
     messages: {
         registration_code: {
             required: 'กรุณากรอกรหัสลงทะเบียน',
+            remote: 'รหัสลงทะเบียนไม่ถูกต้อง',
         }
-    }
+    },
+    success: function() {
+        $('#success').show();
+    },
+
 })

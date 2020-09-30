@@ -335,8 +335,19 @@ body.position-left {
 .verify-registration-code-form fieldset.border {
   border-color: rgba(187, 187, 187, 0.5) !important;
 }
-.verify-registration-code-form form .label {
+.verify-registration-code-form form label.error {
+  margin-top: 5px;
   margin-bottom: 0;
+  width: 100%;
+  color: red;
+  text-align: center;
+}
+.verify-registration-code-form form label.success {
+  margin-top: 5px;
+  margin-bottom: 0;
+  width: 100%;
+  color: green;
+  text-align: center;
 }
 .verify-registration-code-form form input {
   text-transform: uppercase;
@@ -357,6 +368,23 @@ body.position-left {
 }
 .verify-registration-code-form form input::placeholder {
   color: rgba(75, 75, 75, 0.28);
+}
+.verify-registration-code-form form .form-group .btn {
+  border-radius: 0;
+  width: 100% !important;
+}
+@media (min-width: 350px) {
+  .verify-registration-code-form form .form-group .btn {
+    width: 200px !important;
+  }
+}
+.verify-registration-code-form form span.success-message {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin-top: -16px;
+  margin-bottom: -9px;
+  color: #0b823b;
 }
 
 .auth.check-register-data .content-body .box {

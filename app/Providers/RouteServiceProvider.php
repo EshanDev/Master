@@ -54,6 +54,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->middleware('web')
                 ->namespace($this->reg)
                 ->group(base_path('routes/reg.php'));
+
             Route::middleware('web')
                 ->namespace($this->verify)
                 ->group(base_path('routes/verify_route.php'));

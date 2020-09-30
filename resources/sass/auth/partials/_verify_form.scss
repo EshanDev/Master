@@ -19,8 +19,19 @@
 
     form
     {
-        .label{
+        label.error{
+            margin-top: 5px;
             margin-bottom: 0;
+            width: 100%;
+            color: red;
+            text-align: center;
+        }
+        label.success{
+            margin-top: 5px;
+            margin-bottom: 0;
+            width: 100%;
+            color: green;
+            text-align: center;
         }
         input{
             text-transform: uppercase;
@@ -34,6 +45,28 @@
             }
             &::placeholder{
                 color: rgba(75, 75, 75, 0.28);
+            }
+        }
+
+        .form-group{
+            .btn{
+                border-radius: 0;
+                width: 100% !important;
+                @include breakpoint(350px, min)
+                {
+                    width: 200px !important;
+                }
+            }
+        }
+
+        span{
+            &.success-message{
+                display: none;
+                width: 100%;
+                text-align: center;
+                margin-top: -16px;
+                margin-bottom: -9px;
+                color: #0b823b;
             }
         }
     }

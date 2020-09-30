@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Session;
 
 trait RegistersUsers
 {
-    public function showRegistrationForm()
+    public function showRegisterForm()
     {
         // Check Session
         if (Session::get('send_code')) {

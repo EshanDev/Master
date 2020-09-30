@@ -8,20 +8,21 @@
 
         <div class="content-body">
             <div class="verify-registration-code-form">
-                <form action="{{ route('verify.reg.code') }}" method="POST" id="verify_form"  autocomplete="off">
+                <form action="{{ url('auth/verify') }}" method="POST" id="verify_form"  autocomplete="off">
                     @csrf
                     <fieldset class="border rounded">
                         <legend class="w-auto">ตรวจสอบรหัสลงทะเบียน</legend>
                         <div class="form-group">
-                            <label for="registration_code" class="label">รหัสลงทะเบียน</label>
+
                             <input type="text" class="form-control serials"
                                    name="registration_code"
                                    id="registration_code"
-                                   placeholder="ABCD-ABCD-ABCD-ABCD-ABCD"
+                                   placeholder="ABCDE-ABCDE-ABCDE-ABCDE-ABCDE"
                                    onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = 'ABCD-ABCD-ABCD-ABCD-ABCD'">
+                                   onblur="this.placeholder = 'ABCDE-ABCDE-ABCDE-ABCDE-ABCDE'">
+                            <span id="success" class="success-message">รหัสลงทะเบียนถูกต้อง <i class="fa fa-check" aria-hidden="true"></i></span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary text-center w-auto m-auto">ลงทะเบียน</button>
                         </div>
                     </fieldset>
@@ -36,7 +37,7 @@
         $(document).ready(function(){
 
 
-            $('.serials').mask('AAAA-BBBB-CCCC-DDDD-EEEE', {'translation': {
+            $('.serials').mask('AAAAA-BBBBB-CCCCC-DDDDD-EEEEE', {'translation': {
                     A: {pattern: /[A-Za-z0-9]/},
                     B: {pattern: /[A-Za-z0-9]/},
                     C: {pattern: /[A-Za-z0-9]/},

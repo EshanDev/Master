@@ -12,15 +12,18 @@ class VerifyController extends Controller
 {
 
     use VerifyRegistrationCode;
+
+
+
     // Verify Registration Code.
-    public function verify_registration_code(Request $request)
+    public function verify_reg_code(Request $request)
     {
         $Exists_reg_code = Serials::all()->where('serials', $request->input('registration_code'))->first();
 
         if ($Exists_reg_code) {
-            echo 'false';
-        } else {
             echo 'true';
+        } else {
+            echo 'false';
         }
     }
 
