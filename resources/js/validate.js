@@ -15,6 +15,9 @@ let getUrl = window.location,
 // Validation
 //For Conditions System.
 
+
+
+
 const condition = document.getElementById('conditions_form');
 $(condition).validate({
     rules: {
@@ -99,6 +102,10 @@ $(registration).validate({
 
         registration_code: {
             required: true,
+            remote: {
+                url: baseUrl + "/verify_reg_code",
+                type: 'get',
+            }
         },
         name: {
             required: true,
@@ -140,9 +147,14 @@ $(registration).validate({
         },
 
     },
-    success: function() {
-        $('#success').show();
+    success: function(label) {
+        if(label.attr('for') == "registration_code"){
+            let element = '#' + label.attr('for');
+            label.html("<span class='success-message'>รหัสลงทะเบียนถูกต้อง <i class='fa fa-check' aria-hidden='true'></i></span>");
+        }
+
     },
+
 });
 
 
@@ -169,6 +181,7 @@ $(registration_code).validate({
         let name = label.attr('for');
         label.html("<span class='success-message'>รหัสลงทะเบียนถูกต้อง <i class='fa fa-check' aria-hidden='true'></i></span>");
     },
+
 
 
 });

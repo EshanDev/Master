@@ -68,4 +68,8 @@ class RegController extends Controller
     }
 
 
+    public function registered(Request $request)
+    {
+        return response()->json($request->all());
+    }
 }

@@ -3,7 +3,7 @@
         <div class="form-header">
             <div class="text-center">กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</div>
         </div>
-        <form action="{{ url('auth') }}" class="form" id="conditions_form" method="POST" >
+        <form action="{{ url('auth/send_coded') }}" class="form" id="conditions_form" method="POST" >
             @csrf
             <div class="group-form">
                 <div class="form-group">

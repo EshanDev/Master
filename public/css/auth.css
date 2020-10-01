@@ -318,9 +318,20 @@ body.position-left {
   color: #8c8c8c;
 }
 .auth .verify-coded .custom-fieldset .grid-container label.error {
+  margin-top: 5px;
+  margin-bottom: 0;
+  width: 100%;
   color: red;
+  text-align: center;
+  font-size: 17px;
   font-weight: 300;
-  font-size: 18px;
+}
+.auth .verify-coded .custom-fieldset .grid-container label.error span.success-message {
+  width: 100%;
+  text-align: center;
+  margin-top: -16px;
+  margin-bottom: -9px;
+  color: #0b823b;
 }
 .auth .verify-coded .register-btn {
   display: flex;
@@ -356,15 +367,8 @@ body.position-left {
   width: 100%;
   color: red;
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 300;
-}
-.verify-registration-code-form form label.success {
-  margin-top: 5px;
-  margin-bottom: 0;
-  width: 100%;
-  color: green;
-  text-align: center;
 }
 .verify-registration-code-form form input {
   text-transform: uppercase;

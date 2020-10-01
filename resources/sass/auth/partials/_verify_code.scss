@@ -56,9 +56,22 @@
                     color: rgb(140, 140, 140);
                 }
                 label.error {
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                    width: 100%;
                     color: red;
+                    text-align: center;
+                    font-size: 17px;
                     font-weight: 300;
-                    font-size: 18px;
+                    span {
+                        &.success-message {
+                            width: 100%;
+                            text-align: center;
+                            margin-top: -16px;
+                            margin-bottom: -9px;
+                            color: #0b823b;
+                        }
+                    }
                 }
             }
         }

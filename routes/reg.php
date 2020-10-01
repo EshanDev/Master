@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [RegController::class, 'index'])->name('auth.home');
 
-Route::post('/', [RegController::class, 'created']);
+Route::post('/send_coded', [RegController::class, 'created']);
 
 
 
@@ -17,6 +17,7 @@ Route::post('/', [RegController::class, 'created']);
 
 
 Route::get('/register', [RegController::class, 'showRegisterForm'])->name('auth.register');
+Route::post('/register/send', [RegController::class, 'registered']);
 
 
 

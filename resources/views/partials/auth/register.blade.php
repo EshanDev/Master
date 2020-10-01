@@ -23,7 +23,7 @@
 
         <div class="verify-coded">
 
-            <form action="#" method="post" class="verify-coded-form" autocomplete="off" id="registration_form">
+            <form action="{{ url('auth/register/send') }}" method="post" class="verify-coded-form" autocomplete="off" id="registration_form">
             @csrf
             <!-- Form Group One -->
 
