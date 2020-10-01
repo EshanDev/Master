@@ -9,8 +9,6 @@ trait RegistersUsers
 
 
 
-
-
     public function showRegisterForm()
     {
         // Check Session

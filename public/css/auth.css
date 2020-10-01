@@ -259,6 +259,9 @@ body.position-left {
     font-size: 3em;
   }
 }
+.auth .content .verify-coded-form .serials {
+  text-transform: uppercase;
+}
 .auth .content .verify-coded-form input:focus {
   outline: none;
 }

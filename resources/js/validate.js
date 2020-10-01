@@ -148,9 +148,12 @@ $(registration).validate({
 
     },
     success: function(label) {
-        if(label.attr('for') == "registration_code"){
+        if (label.attr('for') == "registration_code") {
             let element = '#' + label.attr('for');
             label.html("<span class='success-message'>รหัสลงทะเบียนถูกต้อง <i class='fa fa-check' aria-hidden='true'></i></span>");
+        } else {
+            label.parent().removeClass('error');
+            label.remove();
         }
 
     },
@@ -184,4 +187,29 @@ $(registration_code).validate({
 
 
 
+});
+
+
+
+
+
+
+
+// Jquery Fomatter
+$('.serials').mask('AAAAA-BBBBB-CCCCC-DDDDD', {
+    'translation': {
+        A: {
+            pattern: /[A-Za-z0-9]/
+        },
+        B: {
+            pattern: /[A-Za-z0-9]/
+        },
+        C: {
+            pattern: /[A-Za-z0-9]/
+        },
+        D: {
+            pattern: /[A-Za-z0-9]/
+        },
+
+    }
 });

@@ -57,7 +57,7 @@ class RegController extends Controller
 
 
                     // Send Mail to user.
-                    Mail::to($data['student_email'])->send(new RegistrationCode($data));
+                    //Mail::to($data['student_email'])->send(new RegistrationCode($data));
                     return Redirect::route('auth.register')->with('send_code', $data);
                 } catch (\Exception $e) {
                     return back()->withInput()
