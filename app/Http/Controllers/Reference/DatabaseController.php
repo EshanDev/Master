@@ -50,4 +50,14 @@ class DatabaseController extends Controller
         }
         die('false');
     }
+
+
+    public function getSerials()
+    {
+        $serials = DB::table('serials')->select('serials', 'email', 'student_code')->get();
+        return response()->json($serials);
+
+    }
+
+
 }

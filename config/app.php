@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        //Fedeisas\LaravelMailCssInliner\CssInlinerPlugin::class,
 
         /*
          * Application Service Providers...

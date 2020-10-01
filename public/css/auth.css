@@ -165,13 +165,13 @@ body.position-left {
     margin: 0 auto;
   }
 }
-@media (max-width: 2000px) and (min-width: 1200px) {
+@media (max-width: 1900px) and (min-width: 1200px) {
   .auth .content {
     width: 900px;
     margin: 0 auto;
   }
 }
-@media (min-width: 2000px) {
+@media (min-width: 1900px) {
   .auth .content {
     padding-top: 90px;
     width: 1000px;
@@ -248,19 +248,33 @@ body.position-left {
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1900px) {
   .auth .content {
     margin-top: 50px;
     margin-bottom: 50px;
   }
 }
-@media (min-width: 2000px) {
+@media (min-width: 1900px) {
   .auth .content .content-header {
     font-size: 3em;
   }
 }
 .auth .content .verify-coded-form input:focus {
   outline: none;
+}
+.auth .content .verify-coded-form .form-control {
+  border-radius: 0;
+}
+.auth .content .verify-coded-form .form-control:disabled,
+.auth .content .verify-coded-form .form-control[readonly] {
+  background-color: #086b56;
+  opacity: 1;
+  color: white;
+  border-color: rgba(2, 59, 35, 0.726);
+  border-radius: 0;
+}
+.auth .content .verify-coded-form label {
+  margin: 0;
 }
 .auth .verify-coded {
   max-width: 80%;
@@ -306,6 +320,7 @@ body.position-left {
 .auth .verify-coded .custom-fieldset .grid-container label.error {
   color: red;
   font-weight: 300;
+  font-size: 18px;
 }
 .auth .verify-coded .register-btn {
   display: flex;
@@ -341,6 +356,8 @@ body.position-left {
   width: 100%;
   color: red;
   text-align: center;
+  font-size: 18px;
+  font-weight: 300;
 }
 .verify-registration-code-form form label.success {
   margin-top: 5px;
@@ -379,7 +396,6 @@ body.position-left {
   }
 }
 .verify-registration-code-form form span.success-message {
-  display: none;
   width: 100%;
   text-align: center;
   margin-top: -16px;
@@ -459,7 +475,7 @@ body.position-left {
 .auth-navbar .navbar-content .navbar-header .icons::before {
   font-size: 1.5em;
 }
-@media (min-width: 2000px) {
+@media (min-width: 1900px) {
   .auth-navbar .navbar-content .navbar-header .icons::before {
     font-size: 1.8em;
   }

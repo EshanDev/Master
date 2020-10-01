@@ -3,6 +3,7 @@ namespace App\Traits;
 use App\Models\Serials;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 trait VerifyRegistrationCode
 {
@@ -41,11 +42,12 @@ trait VerifyRegistrationCode
         {
             $data = [
                 'student_code' => $sn->student_code,
-                'email' => $sn->email,
-                'serials' => $sn->serials
+                'student_email' => $sn->email,
+                'serials' => $sn->serials,
+                'registration_code' => NULL
             ];
 
-            return response()->json($data);
+            return Redirect::route('auth.register')->with('register', $data);
         }
 
 

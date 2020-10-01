@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,11 @@ Route::get('/cache_clear', function(){
     return "Cache is Cleared";
 });
 
+Route::get('/serials_drop', function(){
+    DB::table('serials')->truncate();
+    return "ลบข้อมูลเรียบร้อย";
+});
 Auth::Routes();
+
+Route::get('/serials', 'Reference\DatabaseController@getSerials');
+

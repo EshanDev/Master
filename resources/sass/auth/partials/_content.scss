@@ -3,7 +3,6 @@
         width: 100%;
         margin: 0 auto;
         padding-top: 30px;
-
         /* Content Header */
         .content-header {
             @include breakpoint(780px, max) {
@@ -17,7 +16,6 @@
                 margin-bottom: 25px;
             }
         }
-
         /* Condition into */
         .conditions-into {
             //background-color: rgba(242, 132, 20, 0.05);
@@ -25,12 +23,10 @@
             margin: 40px 0;
             border: 1px solid rgba(242, 132, 20, 0.15);
             background: rgba(242, 132, 20, 0.015);
-
             /* Alert box */
             // &.alert-dismissible {
             //     //padding: 0 !important;
             // }
-
             /* Close Btn */
             .close {
                 position: absolute;
@@ -42,7 +38,6 @@
                 font-size: 2.5em;
                 color: #f23311;
             }
-
             /* Content body */
             .content-body {
                 margin: 0 auto;
@@ -52,7 +47,6 @@
                     font-weight: 300;
                 }
             }
-
             /* Text Author */
             .text-author {
                 padding-bottom: 15px;
@@ -77,18 +71,15 @@
                 }
             }
         }
-
         /*  Conditions */
         .conditions {
             padding-left: 15px;
             padding-right: 15px;
-
             /* Conditions Header */
             .conditions-header {
                 font-size: 1.5em;
                 margin-bottom: 10px;
             }
-
             /* Conditions Item */
             .conditions-item {
                 font-size: 18px;
@@ -98,14 +89,11 @@
             }
         }
     }
-
     /* UL list-style-type = none */
     .conditions-nav {
         list-style-type: none;
     }
-
     /* Media Query*/
-
     @include breakpoint(1200px, max) {
         @include breakpoint(780px, min) {
             .content {
@@ -114,8 +102,7 @@
             }
         }
     }
-
-    @include breakpoint(2000px, max) {
+    @include breakpoint(1900px, max) {
         @include breakpoint(1200px, min) {
             .content {
                 //padding-top: 80px;
@@ -124,8 +111,7 @@
             }
         }
     }
-
-    @include breakpoint(2000px, min) {
+    @include breakpoint(1900px, min) {
         .content {
             padding-top: 90px;
             width: 1000px;

@@ -1,8 +1,8 @@
 require('./bootstrap');
 
 //Disable Enter Key
-$('form').bind("keypress", function (e) {
-    if(e.keyCode == 13){
+$('form').bind("keypress", function(e) {
+    if (e.keyCode == 13) {
         return false;
     }
 });
@@ -10,7 +10,7 @@ $('form').bind("keypress", function (e) {
 
 // get base url
 let getUrl = window.location,
-    baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+    baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 //console.log("this is a "+baseUrl + "/verify_email");
 // Validation
 //For Conditions System.
@@ -23,7 +23,7 @@ $(condition).validate({
             number: true,
             maxlength: 10,
             minlength: 10,
-            remote:{
+            remote: {
                 url: baseUrl + "/verify_student_code",
                 type: "get",
             }
@@ -63,9 +63,21 @@ $(registration).validate({
     rules: {
         student_code: {
             required: true,
+            number: true,
+            maxlength: 10,
+            minlength: 10,
+            remote: {
+                url: baseUrl + "/verify_student_code",
+                type: "get",
+            }
         },
         student_email: {
             required: true,
+            email: true,
+            remote: {
+                url: baseUrl + "/verify_email",
+                type: "get",
+            }
         },
         student_name: {
             required: true,
@@ -95,6 +107,7 @@ $(registration).validate({
     messages: {
         student_name: {
             required: "กรุณากรอกข้อมูล",
+
         },
         student_branch: {
             required: "กรุณากรอกข้อมูล",
@@ -112,17 +125,24 @@ $(registration).validate({
         },
         registration_code: {
             required: "กรุณากรอกรหัสลงทะเบียน",
+            remote: 'รหัสลงทะเบียนไม่ถูกต้อง',
         },
         student_email: {
             required: "กรุณากรอกอีเมล์",
+            remote: 'อีเมล์ไม่ถูกต้อง',
         },
         student_code: {
             required: "กรุณากรอกรหัสนักศึกษา",
+            remote: 'รหัสนักศึกษาไม่ถูกต้อง',
         },
         name: {
             required: "กรุณาตั้งชื่อผู้ใช้งาน",
         },
-    }
+
+    },
+    success: function() {
+        $('#success').show();
+    },
 });
 
 
@@ -145,8 +165,10 @@ $(registration_code).validate({
             remote: 'รหัสลงทะเบียนไม่ถูกต้อง',
         }
     },
-    success: function() {
-        $('#success').show();
+    success: function(label) {
+        let name = label.attr('for');
+        label.html("<span class='success-message'>รหัสลงทะเบียนถูกต้อง <i class='fa fa-check' aria-hidden='true'></i></span>");
     },
 
-})
+
+});
